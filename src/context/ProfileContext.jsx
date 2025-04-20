@@ -100,6 +100,7 @@ export function ProfileProvider({ children, setIsEditing, setIsLoading }) {
     event.preventDefault();
     try {
       setIsLoading(true);
+      window.confirm("Are you sure? This action is not reversible.");
       const responseDelete = await deleteUser(userProfile.userId);
       if (responseDelete.status == 204) {
         setUserProfile({
