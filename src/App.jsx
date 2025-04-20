@@ -109,7 +109,10 @@ function App() {
                     <Route
                       path="profile/:id"
                       element={
-                        <ProfileProvider>
+                        <ProfileProvider
+                          setIsLoading={setIsLoading}
+                          setIsEditing={setIsEditing}
+                        >
                           <ProtectedRoute>
                             <Profile />
                           </ProtectedRoute>

@@ -100,7 +100,7 @@ const Profile = () => {
                     </button>
                     <button
                       className={styles.button}
-                      onClick={handleDeleteProfile}
+                      onClick={(e) => handleDeleteProfile(e)}
                     >
                       {Icons.delete}
                     </button>

@@ -98,9 +98,12 @@ export function ProfileProvider({ children, setIsEditing, setIsLoading }) {
 
   const handleDeleteProfile = async (event) => {
     event.preventDefault();
+    const confirm = window.confirm(
+      "Are you sure? This action is not reversible."
+    );
+    if (!confirm) return;
     try {
       setIsLoading(true);
-      window.confirm("Are you sure? This action is not reversible.");
       const responseDelete = await deleteUser(userProfile.userId);
       if (responseDelete.status == 204) {
         setUserProfile({
@@ -112,12 +115,14 @@ export function ProfileProvider({ children, setIsEditing, setIsLoading }) {
         });
         localStorage.removeItem("token");
         setIsLoggedIn(false);
-        navigate("/");
         alert("Profile deleted successful");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       } else alert("invalid credentials");
     } catch (error) {
-      console.error("Error editing profile:", error);
-      alert("Failed to edit profile. Please try again."); // Show error alert
+      console.error("Error deleting profile:", error);
+      alert("Failed to delete profile. Please try again."); // Show error alert
     } finally {
       setIsLoading(false);
     }
