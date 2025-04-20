@@ -40,6 +40,13 @@ const Maps = () => {
   const useLocations = useLocation();
   const navigate = useNavigate();
   // Create a custom icon (adjust the size and image source as needed)
+  const currentLocationIcon = new L.DivIcon({
+    html: `<div class="${styles.currentLocationIcon}"></div>`,
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30],
+    className: "", // Remove Leaflet default styles
+  });
   const customIcon = (imgSrc) =>
     new L.DivIcon({
       html: `<div class=${styles.circleIcon} style="background-image: url('${imgSrc}');"></div>`,
@@ -122,7 +129,10 @@ const Maps = () => {
                     <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
                     <MapEventHandler selectedRecipe={selectedRecipe} />
                     <MapLocateMeButton />
-                    <Marker position={[location.latitude, location.longitude]}>
+                    <Marker
+                      position={[location.latitude, location.longitude]}
+                      icon={currentLocationIcon}
+                    >
                       <Popup>
                         You are at {location.road}, {location.city}
                       </Popup>

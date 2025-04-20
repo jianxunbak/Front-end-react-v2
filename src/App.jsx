@@ -150,11 +150,20 @@ function App() {
                       path="/userRecipes/:id"
                       element={
                         <ProfileValidationProvider>
-                          <UserRecipes />
+                          <ProtectedRoute>
+                            <UserRecipes />
+                          </ProtectedRoute>
                         </ProfileValidationProvider>
                       }
                     />
-                    <Route path="/map" element={<Maps />} />
+                    <Route
+                      path="/map"
+                      element={
+                        <ProtectedRoute>
+                          <Maps />
+                        </ProtectedRoute>
+                      }
+                    />
                   </Route>
                 </Routes>
                 <ToastContainer position="top-center" autoClose={1000} />
