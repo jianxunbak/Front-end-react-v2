@@ -1,0 +1,146 @@
+.profileMainContainer{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  height:50%;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    width:90%;
+    height:500px;
+    border-radius: 15px;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    overflow: hidden;
+    gap:20px;
+    border: 5px solid  rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+}
+.imageContainer{
+  width:60%;
+  height:100%;
+}
+  
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.loading{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0 0 20px 0;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.detailsContainer{
+  width: 100%;
+  height: auto;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding:20px 20px 20px 0;
+  max-width:40%;
+  gap:20px
+}
+.detailsSubContainer{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+.detailsRowContainer{
+  display: flex;
+  height:auto;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detailsRowContainer p{
+margin: 0;
+padding: 0;
+}
+
+.label{
+  width: 80px;
+}
+.mainTitle{
+  display: flex;
+  width:100%;
+  font-size: 50px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;  }
+
+.listContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin:0
+}
+
+.listContainer ul {
+  list-style: none;
+  padding:0;
+  margin:5px 0 0 0;
+  font-size: 15px;
+}
+
+.listSubContainer{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap:10px;
+margin:0
+;}
+
+.listSubContainer p {
+  margin: 0;
+}
+
+
+.description{
+  margin:0
+}
+
+.buttonsContainer{
+display: flex;
+
+flex-direction: row;
+gap:20px
+}
+
+.buttonsContainer button{
+  height:20px;
+  width:20px;
+  border:none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  .container{
+    flex-direction: column;
+    height: auto;
+  }
+  .imageContainer{
+    width: 100%;
+    height:250px;
+  }
+  .detailsContainer {
+    max-width: 100%;
+  }
+
+  .detailsContainer{
+    padding:0 20px 20px 20px;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+}

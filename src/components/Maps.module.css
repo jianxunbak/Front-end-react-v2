@@ -1,0 +1,213 @@
+.MapMainContainer{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    height:auto;
+  }
+.container {
+    display: flex;
+    flex-direction: row;
+    width:90%;
+     min-height:500px;
+    border-radius: 15px;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    overflow: hidden;
+    gap:20px;
+    background-color: rgb(236, 236, 236);
+}
+.imageContainer{
+    flex-grow: 1;
+    min-width:60%;
+    height:100%;
+    border-radius: 0;
+  }
+  .detailsContainer{
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:20px 20px 20px 0;
+    max-width:40%;
+    gap:20px
+  }
+  .detailsSubContainer{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+  }
+
+.listSubContainer{
+    display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:10px;
+  margin:0;
+}
+  
+  .listSubContainer p {
+    margin: 0;
+  }
+  
+  .listSubContainer button {
+    margin: 0;
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .mainTitle{
+    width:100%;
+    font-size: 50px;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    }
+.map{
+    width:100% !important;
+    height:100% !important;
+    margin: 0; 
+    padding: 0;
+}
+.buttonsContainer{
+    display: flex;
+    flex-direction: row;
+    gap:20px
+    }
+    
+    .buttonsContainer button{
+      height:20px;
+      width:50px;
+      border-radius: 10px;
+      border:none;
+      cursor: pointer;
+    }
+.circleIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    background-size: cover; /* Ensure the image covers the circle */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    /* border: 2px solid #000000; */
+}
+
+.circleIconFav{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make it circular */
+  background-size: cover; /* Ensure the image covers the circle */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  border: 5px solid #ff3030;
+}
+
+.img{
+    width: 150px;
+    height:200px;
+    padding-right: 10px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.markerDetails{
+    display: flex;
+    flex-direction: row;}
+
+.title{
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.imgContainer{
+    width: 200px;
+    height:200px
+}
+
+.textContainer{
+    max-width: 300px;
+    max-height:200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textInnerContainer{
+    max-height:150px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.text{
+    width: 100%;
+}
+  
+  .loading{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0 0 20px 0;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .clusterIcon {
+    background-color: rgba(255, 87, 34, 0.8); /* Custom color */
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+
+@media (max-width: 768px){
+    .container{
+      flex-direction: column;
+      height: auto;
+    }
+    .imageContainer{
+      width: 100%;
+      height:500px;
+    }
+    .detailsContainer {
+      max-width: 100%;
+    }
+  
+    .detailsContainer{
+      padding:0 20px 20px 20px;
+      flex-direction: column;
+      box-sizing: border-box;
+  
+    }
+    .mainTitle{
+      width:100%;
+      font-size: 50px;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      }
+      .listSubContainer{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap:10px;
+        margin:0
+      ;}
+      
+  }

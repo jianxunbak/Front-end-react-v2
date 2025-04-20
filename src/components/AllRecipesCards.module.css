@@ -1,0 +1,175 @@
+.mainCardContainer{
+/* width:100%; */
+height:100%;
+margin:0;
+padding:0;
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap:20px;
+padding: 0 20px 100px 20px;
+justify-content: center;
+}
+
+.recipeContainer{
+  background-color: rgb(236, 236, 236);
+  max-width:300px;
+  max-height:500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.recipeImageContainer {
+  width:100%;
+  height:30vh;
+  min-height:100px;
+  max-height:300px;
+  object-fit: cover;
+}
+
+.recipeDetailsContainer{
+  display:flex;
+  flex-direction: column;
+  padding:10px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.title{
+  width: 100%;
+  font-size: larger;
+  font-weight: bold;
+  margin:0;
+  padding: 0;
+}
+
+.description{
+  width: 100%;
+  font-size:medium;
+  font-weight: 200;
+  text-align: justify;
+  margin:20px 0 20px 0;
+  padding: 0;
+}
+.cuisine{
+  width: 100%;
+  min-height: 20px;
+  font-size:small;
+  font-weight: 100;
+  margin:0;
+  padding: 0;
+}
+
+.loading{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0 0 20px 0;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitleContainer{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0 0 20px 0;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+}
+.mainTitle{
+font-size: 5vh;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+
+.buttonsContainer{
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.button{
+  width: 50px;
+  border:none;
+}
+
+.heartIcon{
+  stroke: rgb(0, 0, 0);
+  stroke-width: 1.5;
+  fill: white;
+  width: 24px; /* Adjust size */
+  height: 24px;
+  transition: fill 0.3s ease;
+  cursor: pointer;
+  overflow: visible;
+  transition: fill 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.heartIcon:hover{
+  stroke: rgb(207, 0, 0);
+  fill: white;
+  transform: scale(1.1);
+}
+.heartIconClicked{
+  fill: red; /* Change to any color you like */
+  width: 24px; /* Adjust size */
+  height: 24px;
+  transition: fill 0.3s ease;
+  cursor: pointer;
+}
+
+
+.subRowContainer{
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap:10px;
+margin:0
+;}
+
+.subRowContainer p {
+  margin: 0;
+}
+
+.subRowContainer button {
+  margin: 0;
+  border: none;
+  font-size: 15px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.searchGroup{
+  width:100%;
+  display: flex ;
+  justify-content: center;
+  gap:5px;
+  padding:0 0 50px 0
+}
+.searchBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width:150px;
+  height:25px;
+  background-color:  rgb(236, 236, 236);
+  border: 0;
+  border-radius: 15px;
+  position:relative;
+  color:rgb(88, 88, 88);
+  font-size: small;
+}

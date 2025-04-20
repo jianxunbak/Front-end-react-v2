@@ -1,0 +1,46 @@
+.heartIcon{
+    stroke: rgb(0, 0, 0);
+    stroke-width: 1.5;
+    fill: white;
+    width: 24px; /* Adjust size */
+    height: 24px;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    overflow: visible;
+    transition: fill 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+  
+  .heartIcon:hover{
+    stroke: rgb(207, 0, 0);
+    fill: white;
+    transform: scale(1.1);
+  }
+  .heartIconClicked{
+    fill: red; /* Change to any color you like */
+    width: 24px; /* Adjust size */
+    height: 24px;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .heartIconClicked:hover{
+    transform: scale(1.1);
+  }
+
+  .svg{
+    fill: rgb(65, 65, 65);
+    width: 18px;
+    height: 18px;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    overflow: visible;
+    transition: fill 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+  .svg:hover{
+    stroke: rgb(0, 0, 0);
+    fill: white;
+    transform: scale(1.2);
+  }
