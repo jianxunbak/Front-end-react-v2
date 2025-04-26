@@ -46,7 +46,12 @@ const AllRecipesCards = () => {
         {isLoggedIn ? (
           <p className={styles.mainTitle}>Welcome back</p>
         ) : (
-          <p className={styles.mainTitle}>Hello</p>
+          <>
+            <p className={styles.mainTitle}>Hello</p>
+            <p className={styles.descriptionCenter}>
+              Please sign in to view more
+            </p>
+          </>
         )}
       </div>
       {!isRecipeLoading && <SearchBar disabled={isRecipeLoading} />}

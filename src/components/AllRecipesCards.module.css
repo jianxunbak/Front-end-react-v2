@@ -50,6 +50,14 @@ justify-content: center;
   margin:20px 0 20px 0;
   padding: 0;
 }
+.descriptionCenter{
+  width: 100%;
+  font-size:medium;
+  font-weight: 200;
+  text-align: center;
+  margin:0;
+  padding: 0;
+}
 .cuisine{
   width: 100%;
   min-height: 20px;

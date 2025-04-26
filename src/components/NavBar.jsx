@@ -32,39 +32,81 @@ const NavBar = () => {
   return (
     <>
       <div className={styles.bar}>
-        <NavLink to="/">{Icons.home}</NavLink>
-        {!isLoggedIn && <NavLink to="login">{Icons.signIn}</NavLink>}
-        {!isLoggedIn && <NavLink to="signUp">{Icons.signUp}</NavLink>}
+        <div className={styles.toolTipContainer}>
+          <NavLink to="/">{Icons.home}</NavLink>
+          <span className={styles.toolTipText}>Home</span>
+        </div>
+        {!isLoggedIn && (
+          <div className={styles.toolTipContainer}>
+            <NavLink to="login">{Icons.signIn}</NavLink>
+            <span className={styles.toolTipText}>Sign in</span>
+          </div>
+        )}
+        {!isLoggedIn && (
+          <div className={styles.toolTipContainer}>
+            <NavLink to="signUp">
+              {Icons.signUp}
+              <span className={styles.toolTipText}>Sign up</span>
+            </NavLink>
+          </div>
+        )}
         {isLoggedIn && (
-          <button
-            onClick={() => {
-              handleLogout(setIsLoading);
-            }}
-          >
-            {Icons.logout}
-          </button>
+          <div className={styles.toolTipContainer}>
+            <button
+              onClick={() => {
+                handleLogout(setIsLoading);
+              }}
+            >
+              {Icons.logout}
+            </button>
+            <span className={styles.toolTipText}>Logout</span>
+          </div>
         )}
 
         {isLoggedIn && (
           <div className={styles.dropdown} ref={dropdownRef}>
-            <button className={styles.dropdownButton} onClick={toggleDropdown}>
-              {Icons.more}
-            </button>
+            <div className={styles.toolTipContainer}>
+              <button
+                className={styles.dropdownButton}
+                onClick={toggleDropdown}
+              >
+                {Icons.more}
+              </button>
+              <span className={styles.toolTipText}>More</span>
+            </div>
 
             <div
               className={`${styles.dropdownContent} ${
                 dropdownOpen ? styles.show : styles.hide
               }`}
             >
-              {isLoggedIn && <NavLink to="add">{Icons.add}</NavLink>}
-
-              {isLoggedIn && <NavLink to="fav">{Icons.fav}</NavLink>}
               {isLoggedIn && (
-                <NavLink to={`profile/${userProfile.userId}`}>
-                  {Icons.profile}
-                </NavLink>
+                <div className={styles.toolTipContainer}>
+                  <NavLink to="add">{Icons.add}</NavLink>
+                  <span className={styles.toolTipText}>Add recipes</span>
+                </div>
               )}
-              {isLoggedIn && <NavLink to="map">{Icons.map}</NavLink>}
+
+              {isLoggedIn && (
+                <div className={styles.toolTipContainer}>
+                  <NavLink to="fav">{Icons.fav}</NavLink>
+                  <span className={styles.toolTipText}>Favorite List</span>
+                </div>
+              )}
+              {isLoggedIn && (
+                <div className={styles.toolTipContainer}>
+                  <NavLink to={`profile/${userProfile.userId}`}>
+                    {Icons.profile}
+                  </NavLink>
+                  <span className={styles.toolTipText}>Profile</span>
+                </div>
+              )}
+              {isLoggedIn && (
+                <div className={styles.toolTipContainer}>
+                  <NavLink to="map">{Icons.map}</NavLink>
+                  <span className={styles.toolTipText}>Map of Recipes</span>
+                </div>
+              )}
             </div>
           </div>
         )}
