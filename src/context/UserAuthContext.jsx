@@ -82,6 +82,45 @@ export function UserAuthProvider({ children, setIsLoading }) {
     }
   }, [checkToken]);
 
+  //auto login on 1st visit
+  //auto login on 1st visit
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const hasLoggedOut = sessionStorage.getItem("hasLoggedOut");
+    if (!token && !hasLoggedOut) {
+      setCredentials({
+        username: "Stark",
+        password: "password",
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const hasLoggedOut = sessionStorage.getItem("hasLoggedOut");
+    if (
+      !token &&
+      !hasLoggedOut &&
+      credentials.username === "Stark" &&
+      credentials.password === "password"
+    ) {
+      const autoLogin = async () => {
+        await handleLogin(null, setIsLoading);
+      };
+      autoLogin();
+    } else {
+      setIsLoggedIn(false);
+      setUserProfile({
+        userId: "",
+        username: "",
+        email: "",
+        aboutMe: "",
+        profilePicture: "",
+      });
+      return;
+    }
+  }, [credentials]);
+
   const handleCredentialsChange = (e, validateRealTimeField = null) => {
     if (!e || !e.target) return; // Avoid accessing undefined properties
     const { name, value } = e.target;
@@ -98,7 +137,7 @@ export function UserAuthProvider({ children, setIsLoading }) {
 
   // get jwt token from username and password when login
   const handleLogin = async (event, setIsLoading) => {
-    event.preventDefault(); // prevents reload to allow the async to run if not wont work as it cant run
+    if (event) event.preventDefault(); // prevents reload to allow the async to run if not wont work as it cant run
     try {
       setIsLoading(true);
       const responseToken = await generateToken(credentials);
@@ -136,6 +175,7 @@ export function UserAuthProvider({ children, setIsLoading }) {
       return;
     } else if (confirmLogOut) {
       setIsLoading(true);
+      sessionStorage.setItem("hasLoggedOut", true);
       localStorage.removeItem("token");
       setIsLoggedIn(false);
       setUserProfile({
@@ -148,7 +188,7 @@ export function UserAuthProvider({ children, setIsLoading }) {
       toast.success("Logged out");
       setIsLoading(false);
       setTimeout(() => {
-        navigate("/");
+        navigate("/login");
       }, 100); // small delay to allow state flush
     }
   };
